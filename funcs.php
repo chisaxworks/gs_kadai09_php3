@@ -1,0 +1,60 @@
+<?php
+// 関数化したものを格納
+
+// DB接続関数
+function db_conn(){
+    try {
+        $pdo = new PDO('mysql:dbname=gs_kadai_php;charset=utf8;host=localhost','root','');
+        return $pdo;
+    
+    } catch (PDOException $e) {
+        exit('DBConnectError:'.$e->getMessage());
+    
+    }
+}
+
+// SQLエラー関数
+function sql_error($stmt){
+    
+    $error = $stmt->errorInfo();
+    exit('SQLError:' . print_r($error, true));
+
+}
+
+// リダイレクト関数
+function redirect($file_name){
+
+    header('Location: '. $file_name);
+    exit();
+
+}
+
+// OGPを取得する関数を切り出す
+function getOgpImg($url, $cache) {
+
+    // URLからHTMLを取得
+    $html = file_get_contents($url);
+    if ($html === false) {
+        throw new Exception('Error fetching the URL');
+    }
+
+    // DOMDocumentを使用してHTMLを解析
+    $doc = new DOMDocument();
+    @$doc->loadHTML($html);
+    
+    $metaTags = $doc->getElementsByTagName('meta');
+    $ogpImg = '';
+    foreach ($metaTags as $meta) {
+        if ($meta->getAttribute('property') == 'og:image') {
+            $ogpImg = $meta->getAttribute('content');
+            break;
+        }
+    }
+
+    // キャッシュに保存
+    $cache[$url] = $ogpImg;
+    
+    return $ogpImg;
+}
+
+?>
