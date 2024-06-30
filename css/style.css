@@ -61,7 +61,7 @@ p.normal {
 .add_btn {
     background-color: #333333;
     color: #ffffff;
-    position: absolute;
+    position: fixed;
     right: 20px;
     top: 10px;
     border-radius: 50%;
@@ -120,7 +120,9 @@ select.inputarea {
     background-color: #888888;
     display: block;
     margin: 20px auto;
-    padding: 10px 50px;
+    padding: 10px;
+    width: 170px;
+    height: 40px;
 }
 
 .submit_btn:hover {
@@ -316,18 +318,25 @@ input[type="radio"] {
     opacity: 0.6;
 }
 
-.delete_btn {
+.otherbtn_wrap {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.delete_btn, .back_btn2 {
     text-align: center;
     border-radius: 10px;
     color: #ffffff;
     background-color: #cccccc;
-    display: flex;
-    width: fit-content;
-    margin: 20px auto;
-    padding: 10px 50px;
+    display: block;
+    padding: 10px;
+    width: 75px;
+    height: 40px;
 }
 
-.delete_btn:hover {
+.delete_btn:hover, .back_btn2:hover {
     background-color: #333333;
     color: #fdcb6e;
 }

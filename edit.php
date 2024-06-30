@@ -77,8 +77,9 @@ if ($status === false) {
             <input type="hidden" name="id" value="<?= $result['id'] ?>">
             <input type="submit" value="更新" class="submit_btn">
         </div>
-        <div>
+        <div class="otherbtn_wrap">
             <a href="delete.php?id=<?= $result['id'] ?>" class="delete_btn">削除</a>
+            <a class="back_btn2" href="index.php">戻る</a>
         </div>
     </form>
 </div>
