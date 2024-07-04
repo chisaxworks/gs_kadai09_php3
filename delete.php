@@ -41,7 +41,7 @@ if ($status === false) {
       </div>
     <a class="back_btn" href="index.php">戻る</a>
 </div>
-<?php include("foot.html");?>
+<?php include("foot_others.html");?>
 
 <!-- 背景色処理 -->
 <script>

@@ -84,4 +84,4 @@ if ($status === false) {
     </form>
 </div>
 
-<?php include("foot.html");?>
+<?php include("foot_others.html");?>

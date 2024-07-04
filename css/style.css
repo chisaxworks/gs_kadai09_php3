@@ -133,7 +133,7 @@ select.inputarea {
 /* 表示エリア */
 .display_wrap h2{
     text-align: center;
-    margin: 0 auto 30px;
+    margin: 0 auto 20px;
 }
 
 .item_wrap {
@@ -341,13 +341,86 @@ input[type="radio"] {
     color: #fdcb6e;
 }
 
+/* 絞り込み機能 */
+.search_wrap {
+    margin: 20px auto 30px;
+    display: none;
+    width: fit-content;
+}
+
+.search_item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+#searchname {
+    margin-bottom: 15px;
+}
+
+.search_colors {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search_btn_wrap {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+}
+
+.search_btn {
+    text-align: center;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px;
+    width: 100px;
+    color: #ffffff;
+    background-color: #333333;
+}
+
+.clear_btn {
+    text-align: center;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px;
+    width: 100px;
+    color: #ffffff;
+    background-color: #cccccc;
+}
+
+.sw_btn {
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto 20px;
+    width: 100px;
+    color: #ffffff;
+    background-color: #cccccc;
+}
+
+.search_btn:hover, .clear_btn:hover, .sw_btn:hover {
+    background-color: #333333;
+    color: #fdcb6e;
+}
+
 /* --------------------
     for SP size 
 -------------------- */
 @media screen and (max-width: 768px){
 
+    .inner {
+        padding: 80px 25px 30px;
+    }
+
     h1 {
         font-size: 21px;
+    }
+
+    form, .sw_btn {
+        font-size: 14px;
     }
 
     .add_btn {
@@ -361,6 +434,21 @@ input[type="radio"] {
         flex-direction: column;
         align-items: flex-start;
         row-gap: 5px;
+        padding: 5px 0;
+    }
+
+    .submit_btn {
+        margin: 20px auto 10px;
+    }
+
+    .search_wrap {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .search_btn, .clear_btn {
+        height: 40px;
+        width: 100px;
     }
 
 }
